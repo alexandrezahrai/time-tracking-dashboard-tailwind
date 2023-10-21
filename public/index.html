@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="My solution to the time tracking dashboard challenge on Frontend Mentor"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Time tracking dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body
+    class="relative min-h-screen flex flex-col text-[18px] leading-none font-rubik bg-neutral-very-dark-blue text-white font-light"
+  >
+    <main class="flex-grow relative">
+      <section class="container py-10 md:py-[80px] lg:py-[100px]">
+        <!-- Box -->
+        <div
+          class="max-w-[1100px] mx-auto flex flex-col gap-8 md:grid md:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2"
+        >
+          <!-- Left Content -->
+          <div
+            class="personal md:col-span-2 lg:col-span-1 lg:row-span-2 bg-neutral-dark-blue rounded-2xl overflow-hidden flex flex-col"
+          >
+            <div class="bio bg-primary-blue rounded-2xl p-7 h-full">
+              <div
+                class="w-20 h-20 rounded-full overflow-hidden mb-9 border-[3px] border-white shadow-2xl"
+              >
+                <img
+                  src="assets/images/image-joseph.jpg"
+                  alt="avatar"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <span class="eyebrow">Report for</span>
+              <h1 class="heading-1 mt-2">Joseph Gonzalez</h1>
+            </div>
+            <ul
+              class="bg-neutral-dark-blue flex justify-between lg:h-2/5 lg:flex-col gap-6 p-7"
+            >
+              <li>
+                <button
+                  type="button"
+                  id="daily-btn"
+                  class="text-neutral-desaturated-blue transition-colors duration-200 ease-in-out"
+                >
+                  Daily
+                </button>
+              </li>
+              <li>
+                <button type="button" id="weekly-btn" class="text-white transition-colors duration-200 ease-in-out">
+                  Weekly
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  id="monthly-btn"
+                  class="text-neutral-desaturated-blue transition-colors duration-200 ease-in-out"
+                >
+                  Monthly
+                </button>
+              </li>
+            </ul>
+          </div>
+          <!-- Tiles -->
+
+          <!-- Work -->
+          <div
+            class="tile rounded-2xl overflow-hidden font-medium relative bg-primary-light-red-work min-h-[275px] lg:min-h-[250px]"
+          >
+            <div class="w-20 absolute -top-2 right-6 z-0">
+              <img
+                src="assets/images/icon-work.svg"
+                alt="work icon"
+                class="w-full h-full object-cover object-center"
+              />
+            </div>
+            <div
+              class="bg-neutral-dark-blue rounded-2xl p-8 absolute bottom-0 w-full z-10"
+            >
+              <div class="flex justify-between items-center">
+                <h2 id="work-tile" class="activity-name">
+                  <span class="sr-only">Work</span>
+                </h2>
+                <img
+                  src="assets/images/icon-ellipsis.svg"
+                  alt="allipsis icon"
+                  class="w-[21px] h-[5px]"
+                />
+              </div>
+              <p class="current-hours big-number mt-11 mb-5"></p>
+              <div class="flex items-center eyebrow">
+                Last Week - <span class="past-hours"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Play -->
+          <div
+            class="tile rounded-2xl overflow-hidden font-medium relative bg-primary-soft-blue-play min-h-[275px] lg:min-h-[250px]"
+          >
+            <div class="w-20 absolute -top-2 right-6 z-0">
+              <img
+                src="assets/images/icon-play.svg"
+                alt="play icon"
+                class="w-full h-full object-cover object-center"
+              />
+            </div>
+            <div
+              class="bg-neutral-dark-blue rounded-2xl p-8 absolute bottom-0 w-full z-10"
+            >
+              <div class="flex justify-between items-center">
+                <h2 id="play-tile" class="activity-name">
+                  <span class="sr-only">Play</span>
+                </h2>
+                <img
+                  src="assets/images/icon-ellipsis.svg"
+                  alt="allipsis icon"
+                  class="w-[21px] h-[5px]"
+                />
+              </div>
+              <p class="current-hours big-number mt-11 mb-5"></p>
+              <div class="flex items-center eyebrow">
+                Last Week - <span class="past-hours"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Study -->
+          <div
+            class="tile rounded-2xl overflow-hidden font-medium relative bg-primary-light-red-study min-h-[275px] lg:min-h-[250px]"
+          >
+            <div class="w-20 absolute -top-2 right-6 z-0">
+              <img
+                src="assets/images/icon-study.svg"
+                alt="study icon"
+                class="w-full h-full object-cover object-center"
+              />
+            </div>
+            <div
+              class="bg-neutral-dark-blue rounded-2xl p-8 absolute bottom-0 w-full z-10"
+            >
+              <div class="flex justify-between items-center">
+                <h2 id="study-tile" class="activity-name">
+                  <span class="sr-only">Study</span>
+                </h2>
+                <img
+                  src="assets/images/icon-ellipsis.svg"
+                  alt="allipsis icon"
+                  class="w-[21px] h-[5px]"
+                />
+              </div>
+              <p class="current-hours big-number mt-11 mb-5"></p>
+              <div class="flex items-center eyebrow">
+                Last Week - <span class="past-hours"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Exercise -->
+          <div
+            class="tile rounded-2xl overflow-hidden font-medium relative bg-primary-lime-green-exercise min-h-[275px] lg:min-h-[250px]"
+          >
+            <div class="w-20 absolute -top-2 right-6 z-0">
+              <img
+                src="assets/images/icon-exercise.svg"
+                alt="exercise icon"
+                class="w-full h-full object-cover object-center"
+              />
+            </div>
+            <div
+              class="bg-neutral-dark-blue rounded-2xl p-8 absolute bottom-0 w-full z-10"
+            >
+              <div class="flex justify-between items-center">
+                <h2 id="exercise-tile" class="activity-name">
+                  <span class="sr-only">Exercise</span>
+                </h2>
+                <img
+                  src="assets/images/icon-ellipsis.svg"
+                  alt="allipsis icon"
+                  class="w-[21px] h-[5px]"
+                />
+              </div>
+              <p class="current-hours big-number mt-11 mb-5"></p>
+              <div class="flex items-center eyebrow">
+                Last Week - <span class="past-hours"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social -->
+          <div
+            class="tile rounded-2xl overflow-hidden font-medium relative bg-primary-violet min-h-[275px] lg:min-h-[250px]"
+          >
+            <div class="w-20 absolute -top-2 right-6 z-0">
+              <img
+                src="assets/images/icon-social.svg"
+                alt="social icon"
+                class="w-full h-full object-cover object-center"
+              />
+            </div>
+            <div
+              class="bg-neutral-dark-blue rounded-2xl p-8 absolute bottom-0 w-full z-10"
+            >
+              <div class="flex justify-between items-center">
+                <h2 id="social-tile" class="activity-name">
+                  <span class="sr-only">Social</span>
+                </h2>
+                <img
+                  src="assets/images/icon-ellipsis.svg"
+                  alt="allipsis icon"
+                  class="w-[21px] h-[5px]"
+                />
+              </div>
+              <p class="current-hours big-number mt-11 mb-5"></p>
+              <div class="flex items-center eyebrow">
+                Last Week - <span class="past-hours"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Self Care -->
+          <div
+            class="tile rounded-2xl overflow-hidden font-medium relative bg-primary-soft-orange-self-care min-h-[275px] lg:min-h-[250px]"
+          >
+            <div class="w-20 absolute -top-2 right-6 z-0">
+              <img
+                src="assets/images/icon-self-care.svg"
+                alt="self-care icon"
+                class="w-full h-full object-cover object-center"
+              />
+            </div>
+            <div
+              class="bg-neutral-dark-blue rounded-2xl p-8 absolute bottom-0 w-full z-10"
+            >
+              <div class="flex justify-between items-center">
+                <h2 id="self-care-tile" class="activity-name">
+                  <span class="sr-only">Self-Care</span>
+                </h2>
+                <img
+                  src="assets/images/icon-ellipsis.svg"
+                  alt="allipsis icon"
+                  class="w-[21px] h-[5px]"
+                />
+              </div>
+              <p class="current-hours big-number mt-11 mb-5"></p>
+              <div class="flex items-center eyebrow">
+                Last Week - <span class="past-hours"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container py-10 lg:py-16 text-center text-neutral-desaturated-blue text-[16px] balance-text">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" class="font-normal"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://alexandre-zahrai.vercel.app/" target="_blank" class="font-normal">Alex Zahrai</a>.
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>
